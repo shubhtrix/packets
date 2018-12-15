@@ -7,7 +7,7 @@ BUILD_DIR = build
 
 CC=gcc
 CC_FLAGS =  -I.
-LD_FLAGS = -ljansson -lcjson
+LD_FLAGS = -lpfring -lpcap
 EXEC = packets 
 SOURCES = $(wildcard *.c)
 HEADERS = $(wildcard *.h)
