@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <sys/time.h>
 
 #include <pfring.h>
 
@@ -12,4 +13,4 @@
 extern int no;
 
 /* Functions Declaration */
-void capture (char *);
+void arrest (char *, int);

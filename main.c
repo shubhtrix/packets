@@ -8,7 +8,7 @@ void usage () {
             "Capture/analyzer/modifier/generator.\n");
     printf("Note : Make sure to insert"
             "pf_ring driver before using this utility.\n");
-    printf("Usage :\n\t-d -\tevice to listen from\n"
+    printf("Usage :\n\t-d -\tdevice to listen from\n"
                    "\t-h -\tprint this help\n"
                    "\t-n -\tnumber of packets to capture\n");
 }
@@ -28,7 +28,6 @@ void main (int argc, char *argv[]) {
                 break;
             case 'n' :
                 no = atoi(optarg);
-                printf ("No. of packets : %d\n", no);
                 break;
             case 'h' :
                 usage ();
@@ -38,7 +37,14 @@ void main (int argc, char *argv[]) {
                 exit (EXIT_FAILURE);
         }
     }
+    
+    if (device)
+        arrest ( device, no);
+    else {
+        printf ("NO device provided to capture packets.\nEXITING...\n\n");
+        usage ();
+        exit (EXIT_SUCCESS);
+    } 
 
-    capture (device);
     exit (EXIT_SUCCESS);
 }
