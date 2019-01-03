@@ -6,11 +6,15 @@
 
 #include <pfring.h>
 
-#define OPTIONS "hd:n:"
+#define OPTIONS "a:hd:n:"
 #define DEFAULT 1536
+
+/* Action to perform :: Arrest and Release */
+enum act { ARREST, RELEASE};
 
 /* Global variable */
 extern int no;
 
 /* Functions Declaration */
 void arrest (char *, int);
+void release (char *, int);

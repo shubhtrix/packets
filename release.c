@@ -1,10 +1,10 @@
 #include "main.h"
 
-void arrest (char *device, int no) {
+void release (char *device, int no) {
 
     int ret, i=0;
-    char print_out[1000] = {'\0'};
-    u_char buffer[1000];
+    char print_out[10000] = {'\0'};
+    u_char buffer[10000];
     u_char mac_addr[6] = {0}; 
     u_char *buffer_p = buffer;
     pfring *handle;
