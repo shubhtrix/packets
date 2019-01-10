@@ -19,8 +19,6 @@ void arrest (char *device, int no) {
     else
         no = 0x0fffffff;
 
-    printf("No of packets to be captured : %d\n", no);
-
     flags |= (1<<3);        //Promiscuous
     flags |= (1<<5);        //Hw Timestamp
 
@@ -32,9 +30,9 @@ void arrest (char *device, int no) {
 
     pfring_set_application_name (handle, "packet");
 
-    // Let'd check whether the ring is bounded to correct MAC/Device
+    // Let's check whether the ring is bounded to correct MAC/Device
     ret = pfring_get_bound_device_address ( handle, mac_addr);
-    printf("Mac Address is %2x:%2X:%2x:%2x:%2x:%2x\n", 
+    printf("Device MAC is :: %2x:%2X:%2x:%2x:%2x:%2x\n", 
                 mac_addr[0],mac_addr[1],mac_addr[2],
                     mac_addr[3],mac_addr[4],mac_addr[5]);
 

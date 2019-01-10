@@ -9,6 +9,9 @@
 #define OPTIONS "a:hd:n:"
 #define DEFAULT 1536
 
+#define MAX_PKT_SIZE 65535
+#define MIN_PKT_SIZE 64
+
 /* Action to perform :: Arrest and Release */
 enum act { ARREST, RELEASE};
 
